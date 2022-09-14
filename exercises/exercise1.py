@@ -20,9 +20,9 @@ class Circle:
     def __init__(self, radio):
         self.radio= float(radio) #variable de instancia
     def area(self):
-        return 3.14*(self.radio**2)
+        return round(pi*(self.radio**2),2)
     def perimetro(self):
-        return 2*3.14*self.radio
+        return round(2*pi*self.radio,2)
 
 # NO MODIFICAR - INICIO
 # Test básico

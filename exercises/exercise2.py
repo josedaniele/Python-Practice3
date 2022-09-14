@@ -1,6 +1,9 @@
 """Variables de Clase y Métodos de Clase."""
 
 
+from pydoc import describe
+
+
 class Article:
     """Todos los artículos tienen un nombre y un costo, opcionalmente algunos
     tienen un porcentaje de descuento.
@@ -20,7 +23,19 @@ class Article:
         - No utilizar Properties
         - Utilizar Type Hints en todos los métodos y variables
     """
-
+    _iva = 0.21
+    
+    def __init__(self,nombre:str ,costo:float, descuento= 0):
+        self.nombre= nombre
+        self.costo= costo
+        self.descuento= float(descuento)
+        
+    def calcular_precio(self):
+        
+        return round(self.costo*self._iva + self.costo - self.descuento*self.costo, 2)
+    
+    # def actualizar_iva(_iva):
+    #     _iva= 
 
 # NO MODIFICAR - INICIO
 # Test parámetro obligatorio
