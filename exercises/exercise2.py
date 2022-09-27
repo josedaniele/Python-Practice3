@@ -23,16 +23,25 @@ class Article:
         - No utilizar Properties
         - Utilizar Type Hints en todos los métodos y variables
     """
-    _iva = 0.21
+    #variable de clase
+    _iva = 0.21 
     
-    def __init__(self,nombre:str ,costo:float, descuento= 0):
-        self.nombre= nombre
-        self.costo= costo
-        self.descuento= float(descuento)
-        
+        #variables de instancia 
+    def __init__(self,nombre:str ,costo:float, descuento:float= 0):
+        self.nombre= nombre 
+        self.costo= costo   
+        self.descuento= descuento   
+        #metodo de instancia
     def calcular_precio(self):
+       descontar=  round(self.costo -self.costo*self.descuento,2)
+       precioFinal= round(descontar*self._iva+descontar,2)
+       return precioFinal
+        #metodo de clase
+    @classmethod
+    def actualizar_iva(cls, _iva):
         
-        return round(self.costo*self._iva + self.costo - self.descuento*self.costo, 2)
+        cls._iva= _iva
+        
     
     # def actualizar_iva(_iva):
     #     _iva= 
